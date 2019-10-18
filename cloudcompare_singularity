@@ -43,8 +43,12 @@ Include: bash
   mv CloudCompare_v2.11.alpha_bin_x64 /APPS/
   
 # CloudCompare shortcut:  
-WINEDEBUG=-all wine /APPS/CloudCompare_v2.11.alpha_bin_x64/CloudCompare.exe >> /usr/local/bin/cloudcompare.CloudCompare
-chmod 755 /usr/local/bin/cloudcompare.CloudCompare
+basename=`basename CloudCompare .exe`
+  echo '#!/bin/bash
+WINEDEBUG=-all wine '$CloudCompare.exe '"$@"' >> /usr/local/bin/$basename
+chmod 755 /usr/local/bin/$basename
+#WINEDEBUG=-all wine /APPS/CloudCompare_v2.11.alpha_bin_x64/CloudCompare.exe >> /usr/local/bin/cloudcompare.CloudCompare
+#chmod 755 /usr/local/bin/cloudcompare.CloudCompare
 
 %help
 This container runs CloudCompare via an emulated Windows environment. A typical run would look like:
