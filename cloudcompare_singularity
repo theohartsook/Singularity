@@ -41,6 +41,7 @@ Include: bash
   wget http://www.cloudcompare.org/release/CloudCompare_v2.11.alpha_bin_x64.7z
   7z x CloudCompare_v2.11.alpha_bin_x64.7z
   mv CloudCompare_v2.11.alpha_bin_x64 /APPS/
+  chmod 775 -R /APPS/CloudCompare_v2.11.alpha_bin_x64
   
 # CloudCompare shortcut:  
 #basename=`basename CloudCompare .exe`
